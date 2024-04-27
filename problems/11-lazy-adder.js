@@ -23,8 +23,21 @@ AFTER YOU ARE FINISHED WITH THIS PROBLEM, ASK FOR A CODE REVIEW
 ***********************************************************************/
 
 function lazyAdder(firstNum) {
-  // Your code here
+  let sum = firstNum;
+
+  return function (secondNum) {
+    sum += secondNum;
+    return function (thirdNum) {
+      sum += thirdNum;
+      return sum;
+    }
+  }
 }
+
+let firstAdd = lazyAdder(1);
+let secondAdd = firstAdd(2);
+let sum = secondAdd(3);
+console.log(sum); // prints 6
 
 /**************DO NOT MODIFY ANYTHING UNDER THIS  LINE*****************/
 try {

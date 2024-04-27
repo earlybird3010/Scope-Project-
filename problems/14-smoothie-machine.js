@@ -24,8 +24,33 @@ console.log(smoothie2("pineapple"));
 ***********************************************************************/
 
 const smoothieMachine = (...ingredients) => {
-  // Your code here
-};
+  let retStatement;
+
+  if (ingredients.length === 0) {
+    retStatement = "";
+  } else {
+    retStatement = "I'm having a smoothie with " + ingredients[0];
+    for (let i = 1; i < ingredients.length; i++) {
+      retStatement += ` and ${ingredients[i]}`;
+    }
+  }
+
+  return function (...params) {
+    if (params.length === 0) {
+
+    } else if (retStatement === "") {
+      retStatement = "I'm having a smoothie with " + params[0];
+      for (let i = 1; i < params.length; i++) {
+        retStatement += ` and ${params[i]}`;
+      }
+    } else {
+      for (let i = 0; i < params.length; i++) {
+        retStatement += ` and ${params[i]}`;
+      }
+    }
+    return retStatement;
+  };
+}
 
 /**************DO NOT MODIFY ANYTHING UNDER THIS  LINE*****************/
 try {

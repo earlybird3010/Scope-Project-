@@ -24,7 +24,16 @@ console.log(table2(75)); // STILL prints 6
 
 ***********************************************************************/
 function recVolume(height) {
-  // Your code here
+  let count = 1;
+  let current = height;
+
+  return function (nextMeasurement) {
+    if (count < 3) {
+      count++;
+      current = current * nextMeasurement;
+    }
+    return current;
+  }
 }
 
 /**************DO NOT MODIFY ANYTHING UNDER THIS  LINE*****************/
