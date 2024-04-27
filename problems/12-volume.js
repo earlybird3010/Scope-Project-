@@ -27,14 +27,23 @@ function recVolume(height) {
   let count = 1;
   let current = height;
 
-  return function (nextMeasurement) {
-    if (count < 3) {
+  function currentProd(nextMeasurement) {
+    if (count === 1) {
+      current *= nextMeasurement;
       count++;
-      current = current * nextMeasurement;
+      return currentProd;
+    } else if (count === 2) {
+      current *= nextMeasurement;
+      count++;
+      return current;
+    } else {
+      return current;
     }
-    return current;
   }
+
+  return currentProd;
 }
+
 
 /**************DO NOT MODIFY ANYTHING UNDER THIS  LINE*****************/
 try {

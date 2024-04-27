@@ -43,8 +43,16 @@ AFTER YOU ARE FINISHED WITH THIS PROBLEM, ASK FOR A CODE REVIEW
 ***********************************************************************/
 
 function curriedSum(numArgs) {
-  // Your code here
+  let sum = 0;
+  let count = 0;
+
+  return function (number) {
+    if (numArgs === count) {
+      return sum;
+    } else { }
+  }
 }
+
 /**************DO NOT MODIFY ANYTHING UNDER THIS  LINE*****************/
 try {
   module.exports = curriedSum;

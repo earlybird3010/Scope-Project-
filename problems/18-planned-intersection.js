@@ -15,8 +15,20 @@ console.log(fame(["a", "f", "z", "b"])); // returns [ 'f', 'a' ]
 
 *******************************************************************************/
 
+const common = require("mocha/lib/interfaces/common");
+
 function plannedIntersect(firstArr) {
-  // Your code here
+  return function (secondArr) {
+    let commonArray = [];
+
+    for (let i = 0; i < secondArr.length; i++) {
+      if (firstArr.includes(secondArr[i])) {
+        commonArray.push(secondArr[i]);
+      }
+    }
+
+    return commonArray;
+  }
 }
 
 /**************DO NOT MODIFY ANYTHING UNDER THIS  LINE*************************/

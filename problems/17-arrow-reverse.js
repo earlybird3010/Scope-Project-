@@ -13,10 +13,19 @@ let result3 = reverseStr("potato"); // returns "otatop"
 ***********************************************************************/
 
 // Your code here
+const reverseStr = (string) => {
+  let revStr = "";
+
+  for (let i = string.length - 1; i >= 0; i--) {
+    revStr += string[i];
+  }
+
+  return revStr;
+}
 
 /**************DO NOT MODIFY ANYTHING UNDER THIS LINE*****************/
 try {
-    module.exports = reverseStr;
-  } catch (e) {
-    return null;
-  }
+  module.exports = reverseStr;
+} catch (e) {
+  return null;
+}
